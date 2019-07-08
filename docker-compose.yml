@@ -1,0 +1,21 @@
+version: '3.7'
+services: 
+  designer:
+    image: devopsfaith/krakendesigner:latest
+    ports:
+      - 8787:80
+  krakend:
+    image: devopsfaith/krakend:config-watcher
+    working_dir: /etc/krakend/
+    environment: 
+      KRAKEND_CONFIG: krakend.yml
+    ports: 
+      - 80:8000
+    volumes: 
+      - ./konf.d:/etc/krakend/
+  check:
+    image: devopsfaith/krakend
+    working_dir: /etc/krakend/
+    command: check -c krakend.yml
+    volumes: 
+      - ./konf.d:/etc/krakend

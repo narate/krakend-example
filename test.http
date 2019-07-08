@@ -1,0 +1,9 @@
+### GET index page
+GET http://127.0.0.1/
+
+### GET IP
+GET http://127.0.0.1/ip
+
+### GET Aggregate API
+GET http://127.0.0.1/aggs
+

@@ -1,0 +1,28 @@
+version: 2
+name: KrakenD - API Gateway
+port: 8000
+output_encoding: json
+endpoints:
+- endpoint: "/"
+  method: "GET"
+  backend:
+  - host:
+    - http://httpbin.org
+    url_pattern: "/ip"
+    
+- endpoint: "/ip"
+  method: "GET"
+  backend:
+  - host:
+    - "http://httpbin.org"
+    url_pattern: "/ip"
+
+- endpoint: "/aggs"
+  method: "GET"
+  backend:
+  - host:
+    - "http://httpbin.org"
+    url_pattern: "/ip"
+  - host:
+    - "http://mockbin.org"
+    url_pattern: "/status/200/Hello"

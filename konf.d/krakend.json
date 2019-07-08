@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "name": "KrakenD - API Gateway",
+    "port": 8000,
+    "endpoints": [{
+        "endpoint": "/",
+        "method": "GET",
+        "backend": [{
+            "url_pattern": "/ip",
+            "host": [
+                "http://httpbin.org/"
+            ]
+        }]
+    }]
+}
