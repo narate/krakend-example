@@ -7,15 +7,15 @@ See more https://i.dont.works/basic-krakend-api-gateway/
 ```
 $ docker-compose up -d
 
-$ http://127.0.0.1/
+$ curl http://127.0.0.1/
 
-$ http://127.0.0.1/ip
+$ curl http://127.0.0.1/ip
 
-$ http://127.0.0.1/aggs
+$ curl http://127.0.0.1/aggs
 ```
 
 
-# Check confilg
+# Check config file
 
 ```
 $ docker-compose up check
